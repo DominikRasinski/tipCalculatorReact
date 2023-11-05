@@ -1,0 +1,9 @@
+.mainBase {
+    @apply
+    flex
+    flex-col
+    justify-center
+    items-center
+    bg-strong-cyan
+    text-light-grayish-cyan
+}

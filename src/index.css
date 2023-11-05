@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +11,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.test {
+  @apply
+  bg-strong-cyan
+  bg-very-dark-cyan
+  bg-dark-grayish-cyan
+  bg-slighty-lighter-grayish-cyan
+  bg-light-grayish-cyan
+  bg-slighty-lighter-garyish-cyan
+  bg-hsl-white
 }
