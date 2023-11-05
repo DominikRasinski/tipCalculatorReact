@@ -1,8 +1,9 @@
-import React from 'react';
+import * as React from 'react';
+import { InputHTMLAttributes } from 'react';
 import css from './tipCalculator.module.css';
 
 
-interface calculatorProps extends HTMLInputElement{
+interface calculatorProps extends InputHTMLAttributes<HTMLInputElement>{
 
 }
 
@@ -17,32 +18,34 @@ export const MainCalculator = (props: calculatorProps) => {
 
 const LeftCalculatorStructure = (props: calculatorProps) => {
     return (
-        <div>
+        <div className={`${css.leftContainer}`}>
             <p>Bill</p>
-            <input type="number" name="" id="" />
+            <input type="text" name="" id="" />
             <p>Select Tip %</p>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <input type="number" name="" id="" />
+            <div className='flex flex-row justify-between flex-wrap'>
+                <button className={`${css.buttons}`}>5%</button>
+                <button className={`${css.buttons}`}>10%</button>
+                <button className={`${css.buttons}`}>15%</button>
+                <button className={`${css.buttons}`}>25%</button>
+                <button className={`${css.buttons}`}>50%</button>
+                <input type="text" name="" id="" className={`${css.buttons}`}/>
+            </div>
             <p>Number of People</p>
-            <input type="number" name="" id="" />
+            <input type="text" name="" id="" />
         </div>
     )
 }
 
 const RightCalculatorStructure = (props: calculatorProps) => {
     return (
-        <div>
+        <div className={`p-2 ${css.rightContainer}`}>
             <div>
-                <p>Tip Amount</p><span>/ person</span>
-                <p><span>$</span>0.00</p>
+                <p className='inline-block w-1/3'>Tip Amount</p><span>/ person</span>
+                <p className='inline-block w-1/2'><span>$</span>0.00</p>
             </div>
             <div>
-                <p>Total</p><span>/ person</span>
-                <p><span>$</span>0.00</p>
+                <p className='inline-block w-1/3'>Total</p><span>/ person</span>
+                <p className='inline-block w-1/2'><span>$</span>0.00</p>
             </div>
         </div>
     )
