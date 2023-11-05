@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import css from './mainContainer.module.css';
 
 
@@ -10,7 +10,10 @@ export const MainContainer = (props: mainContainerProps) => {
 
     return (
         <div className={`${css.mainBase}`}>
-            <p>SPLITER</p>
+            <div>
+                <p className='text-very-dark-cyan text-[24px]'>SPLITER</p>
+                {props.children ? props.children : null}
+            </div>
         </div>
     )
 }
