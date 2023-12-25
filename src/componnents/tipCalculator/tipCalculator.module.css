@@ -9,9 +9,33 @@
     bg-hsl-white
 }
 
+.buttonsBase {
+    @apply
+    rounded-sm
+    p-1
+    w-1/3
+}
+
 .buttons {
     @apply
-    w-1/3
+    bg-very-dark-cyan
+    text-hsl-white
+}
+
+.btnCustom {
+    @apply
+    bg-slighty-lighter-garyish-cyan
+    text-dark-grayish-cyan
+}
+
+.btnReset {
+    @apply
+    text-very-dark-cyan
+    bg-strong-cyan
+    uppercase
+    rounded-sm
+    font-semibold
+    w-full
 }
 
 .leftContainer {
@@ -28,5 +52,17 @@
     bg-very-dark-cyan
     text-hsl-white 
     w-1/2
+    rounded-lg
+}
+
+.billInput {
+
+}
+
+.inputBase {
+    @apply
+    bg-slighty-lighter-garyish-cyan
+    text-very-dark-cyan
+    font-bold
     rounded-lg
 }
