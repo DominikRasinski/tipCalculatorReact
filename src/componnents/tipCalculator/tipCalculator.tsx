@@ -17,21 +17,40 @@ export const MainCalculator = (props: calculatorProps) => {
 }
 
 const LeftCalculatorStructure = (props: calculatorProps) => {
+
+    const [tip, setTip] = React.useState(0);
+    const [bill, setBill] = React.useState(props?.value ?? '');
+    const [people, setPeople] = React.useState(props?.value ?? '');
+    const [input, setInput] = React.useState(props?.value ?? '');
+
+    const handleInput = (event: any) => {
+        setInput(event.target.value)
+    }
+    const handleBill = (event: any) => {
+        setBill(event.target.value)
+    }
+    const handlePeople = (event: any) => {
+        setPeople(event.targer.value)
+    }
+
+    console.log(bill);
+    console.log(people);
+
     return (
         <div className={`${css.leftContainer}`}>
             <p>Bill</p>
-            <input type="text" name="" id="" />
+            <input type="text" name="" id="" value={bill} onInput={handleBill} />
             <p>Select Tip %</p>
             <div className='flex flex-row justify-between flex-wrap'>
-                <button className={`${css.buttons}`}>5%</button>
-                <button className={`${css.buttons}`}>10%</button>
-                <button className={`${css.buttons}`}>15%</button>
-                <button className={`${css.buttons}`}>25%</button>
-                <button className={`${css.buttons}`}>50%</button>
-                <input type="text" name="" id="" className={`${css.buttons}`}/>
+                <button className={`${css.buttons}`} onClick={() => setTip(5)}>5%</button>
+                <button className={`${css.buttons}`} onClick={() => setTip(10)}>10%</button>
+                <button className={`${css.buttons}`} onClick={() => setTip(15)}>15%</button>
+                <button className={`${css.buttons}`} onClick={() => setTip(25)}>25%</button>
+                <button className={`${css.buttons}`} onClick={() => setTip(50)}>50%</button>
+                <input type="text" name="" id="" className={`${css.buttons}`} value={input} onInput={handleInput}/>
             </div>
             <p>Number of People</p>
-            <input type="text" name="" id="" />
+            <input type="text" name="" id="" value={people} onInput={handlePeople} />
         </div>
     )
 }
